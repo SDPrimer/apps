@@ -1,0 +1,19 @@
+{
+  "name": "@shared/localization",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "build:watch": "tsc -b --watch"
+  },
+  "dependencies": {
+    "i18next": "^23.10.0",
+    "react-i18next": "^14.0.5"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native-localize": "*"
+  }
+}
