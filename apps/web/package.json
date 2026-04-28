@@ -1,5 +1,5 @@
 {
-  "name": "gb_web",
+  "name": "sdprimer_web",
   "private": true,
   "main": "src/index.tsx",
   "workspaces": [
