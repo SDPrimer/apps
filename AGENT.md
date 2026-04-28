@@ -80,7 +80,7 @@ AI coding agents should read this file before making any changes.
 
 ### Commit Workflow
 
-Follow the detailed workflow in [.agent/skills/commit.md](file:///.agent/skills/commit.md):
+Follow the detailed workflow in [.agent/skills/commit/COMMIT.md](file:///.agent/skills/commit/COMMIT.md):
 
 1. **Branch**: `git checkout -b amitraikwar/{about-changes}`
 2. **Stage**: `git add <files>`
@@ -129,9 +129,11 @@ make branch-clean     # Delete local branches tracking deleted remotes
 > Skills are reusable instructions for the Antigravity AI coding agent.
 > They are stored in the `.agent/skills/` directory.
 
-- **[Commit Workflow](file:///.agent/skills/commit.md)**: Guidelines for commits and branch naming.
-- **[Monorepo Architect](file:///.agent/skills/monorepo.md)**: Expertise in monorepo structure and optimization.
-- **[Mobile Expert](file:///.agent/skills/mobile.md)**: Detailed guidance for React Native and Expo development.
+- **[Commit Workflow](file:///.agent/skills/commit/COMMIT.md)**: Guidelines for commits and branch naming.
+- **[Monorepo Architect](file:///.agent/skills/monorepo/MONOREPO.md)**: Expertise in monorepo structure and optimization.
+- **[Mobile Expert](file:///.agent/skills/mobile/MOBILE.md)**: Detailed guidance for React Native and Expo development.
+- **[Jira Management](file:///.agent/skills/jira/JIRA.md)**: Conventions for Jira issue creation and management.
+- **[Pull Request Skill](file:///.agent/skills/pr/PR.md)**: Templates and rules for Feat and Fix Pull Requests.
 
 ### Core Repository Skills
 
