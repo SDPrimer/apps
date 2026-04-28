@@ -1,6 +1,7 @@
 {
-  "extends": ["../../tsconfig.json"],
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "outDir": "dist",
     "strict": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "target": "esnext",
@@ -17,8 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@shared/*": ["../../packages/*/src"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "jest.config.js"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

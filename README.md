@@ -1,2 +1,2 @@
 # gb
-Monorepo for the growboard project
+Monorepo for the SDPrimer project

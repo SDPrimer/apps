@@ -1,5 +1,5 @@
 {
-  "name": "growboard",
+  "name": "sdprimer",
   "version": "1.0.0",
   "workspaces": [
     "apps/*",
@@ -7,14 +7,14 @@
   ],
   "private": true,
   "scripts": {
-    "lint:mobile": "yarn workspace gb_mobile lint",
+    "lint:mobile": "yarn workspace sdprimer_mobile lint",
     "lint:staged": "eslint --cache --fix apps/web packages --ext .ts,.tsx,.js,.jsx",
-    "dev:ios": "yarn workspace gb_mobile start",
-    "dev:android": "yarn workspace gb_mobile start",
-    "dev:web": "yarn workspace gb_web start",
+    "dev:ios": "yarn workspace sdprimer_mobile start",
+    "dev:android": "yarn workspace sdprimer_mobile start",
+    "dev:web": "yarn workspace sdprimer_web start",
     "build:ios": "cd apps/mobile && npx expo run:ios --no-install",
     "build:android": "cd apps/mobile && npx expo run:android --no-install",
-    "build:web": "yarn workspace gb_web build",
+    "build:web": "yarn workspace sdprimer_web build",
     "build:constants": "yarn workspace @shared/constants run build",
     "build:localization": "yarn workspace @shared/localization run build",
     "build:packages": "concurrently \"yarn build:constants\" \"yarn build:localization\" ",
@@ -67,8 +67,8 @@
     "packages/*",
     "apps/*"
   ],
-  "packageManager": "yarn@4.0.0",
-  "repository": "git@github.com:GrowBoard/gb.git",
+  "packageManager": "yarn@4.14.1",
+  "repository": "git@github.com:SDPrimer/apps.git",
   "author": "Amit Raikwar <raikwar.amit.1603@gmail.com>",
   "license": "MIT",
   "resolutions": {
