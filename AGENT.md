@@ -133,7 +133,7 @@ make branch-clean     # Delete local branches tracking deleted remotes
 - **[Monorepo Architect](file:///.agent/skills/monorepo/MONOREPO.md)**: Expertise in monorepo structure and optimization.
 - **[Mobile Expert](file:///.agent/skills/mobile/MOBILE.md)**: Detailed guidance for React Native and Expo development.
 - **[Jira Management](file:///.agent/skills/jira/JIRA.md)**: Conventions for Jira issue creation and management.
-- **[Pull Request Skill](file:///.agent/skills/pr/PR.md)**: Templates and rules for Feat and Fix Pull Requests.
+- **[Pull Request Skill](file:///.agent/skills/pr/PR.md)**: Templates, rules, and **agent-led Jira automation** for PR workflows (`jira-pr-created`, `jira-pr-merged`).
 
 ### Core Repository Skills
 

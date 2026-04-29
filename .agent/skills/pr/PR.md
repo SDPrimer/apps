@@ -95,26 +95,28 @@ When creating a PR using the `github-mcp-server` tool, ensure:
 - Keep titles concise but descriptive.
 - Descriptions should explain the "Why" and the functional impact of the changes.
 - Ensure the PR is created as a `draft` if it's still a work in progress.
-- **Jira Automation Rules**: 
-    - **PR Created Workflow**:
-        - **Trigger**: Pull request created.
-        - **Action**: Add Comment.
-        - **Comment**: `Pull Request raised: [{{pullRequest.title}}|{{pullRequest.url}}]`
-        - **Action**: Transition issue to `In Progress`.
-    - **PR Merged Workflow**:
-        - **Trigger**: Pull request merged.
-        - **Action**: Add Comment.
-        - **Comment**: 
-          ```text
-          The changes in this PR have been merged.
+### skill: jira-pr-created
+**Trigger:** After creating a Pull Request.
+1. Extract the Ticket ID from the branch name using: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`.
+2. Use `addCommentToJiraIssue` to add a comment: `Pull Request raised: [{{pullRequest.title}}|{{pullRequest.url}}]`.
+3. Use `transitionJiraIssue` to move the ticket to `In Progress` (Transition ID: `21`).
 
-          *Summary of changes:*
-          {{pullRequest.description.match("(?s)## Implementation\s*(.*?)\r?\n\r?\nTicket:")}}
+### skill: jira-pr-merged
+**Trigger:** After merging a Pull Request.
+1. Extract the Ticket ID from the branch name.
+2. Extract the implementation summary using: `{{pullRequest.description.match("(?s)## Implementation\s*(.*?)\r?\n\r?\nTicket:")}}`.
+3. Use `addCommentToJiraIssue` to add a comment:
+   ```text
+   The changes in this PR have been merged.
 
-          Merged by: {{pullRequest.author.displayName}}
-          ```
-        - **Action**: Transition issue to `Done`.
-    - **Smart Values for reference**:
-        - **Summary Extraction**: `{{pullRequest.description.substringAfter("## Implementation").substringBefore("Ticket:").trim()}}`
-        - **Ticket ID from Branch**: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`
+   *Summary of changes:*
+   {extracted_summary}
+
+   Merged by: {{pullRequest.author.displayName}}
+   ```
+4. Use `transitionJiraIssue` to move the ticket to `Done` (Transition ID: `31`).
+
+### Smart Values Reference
+- **Summary Extraction**: `{{pullRequest.description.substringAfter("## Implementation").substringBefore("Ticket:").trim()}}`
+- **Ticket ID from Branch**: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`
 
