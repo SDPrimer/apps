@@ -101,7 +101,7 @@ When creating a PR using the `github-mcp-server` tool, ensure:
 **Trigger:** After creating a Pull Request.
 
 1. Extract the Ticket ID from the branch name using: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`.
-2. Use `addCommentToJiraIssue` to add a comment: `Pull Request raised: [{{pullRequest.title}}|{{pullRequest.url}}]`.
+2. Use `addCommentToJiraIssue` (with `contentFormat: "markdown"`) to add a comment: `Pull Request raised: [{{pullRequest.title}}]({{pullRequest.url}})`.
 3. Use `transitionJiraIssue` to move the ticket to `In Progress` (Transition ID: `21`).
 
 ### skill: jira-pr-merged
@@ -119,8 +119,8 @@ When creating a PR using the `github-mcp-server` tool, ensure:
    {extracted_summary}
 
    *Author:* {extracted_author}
-   *Merged by:* {extracted_author}
-   *PR Link:* {{pullRequest.url}}
+   *Merged by:* {{pullRequest.mergedBy.displayName}}
+   *PR Link:* [{{pullRequest.title}}]({{pullRequest.url}})
    ```
 
 5. Use `transitionJiraIssue` to move the ticket to `Done` (Transition ID: `31`).
