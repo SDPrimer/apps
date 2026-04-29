@@ -105,18 +105,20 @@ When creating a PR using the `github-mcp-server` tool, ensure:
 **Trigger:** After merging a Pull Request.
 1. Extract the Ticket ID from the branch name.
 2. Extract the implementation summary using: `{{pullRequest.description.match("(?s)## Implementation\s*(.*?)\r?\n\r?\nTicket:")}}`.
-3. Use `addCommentToJiraIssue` to add a comment:
+3. Extract the original PR Author using: `{{pullRequest.description.substringAfter("Author:").trim()}}`.
+4. Use `addCommentToJiraIssue` to add a comment:
    ```text
    The changes in this PR have been merged.
 
    *Summary of changes:*
    {extracted_summary}
 
-   Merged by: {{pullRequest.author.displayName}}
+   *Author:* {extracted_author}
+   *Merged by:* {{pullRequest.mergedBy.displayName}}
    ```
-4. Use `transitionJiraIssue` to move the ticket to `Done` (Transition ID: `31`).
+5. Use `transitionJiraIssue` to move the ticket to `Done` (Transition ID: `31`).
+
 
 ### Smart Values Reference
 - **Summary Extraction**: `{{pullRequest.description.substringAfter("## Implementation").substringBefore("Ticket:").trim()}}`
 - **Ticket ID from Branch**: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`
-
