@@ -1,3 +1,8 @@
+---
+name: pr
+description: Standardized workflows for Pull Request creation and lifecycle management, including branch naming, templates, and agent-led Jira status automation.
+---
+
 # Pull Request Management Skill
 
 This ruleset defines the standard patterns for creating and managing Pull Requests in this repository. **All Pull Requests MUST be created in the SDPrimer/apps repository.**

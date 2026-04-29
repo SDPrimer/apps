@@ -1,3 +1,8 @@
+---
+name: commit
+description: Manage Conventional Commits, branch naming conventions, and interactive commit workflows using the project's standardized makefile commands.
+---
+
 # Commit Command
 
 This file provides guidance for using Claude Code to commit changes following the project's Commit Workflow.
