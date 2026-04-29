@@ -1,3 +1,8 @@
+---
+name: mobile
+description: Deep expertise in mobile application development focusing on React Native, Expo SDK, architectural patterns, and platform-specific performance optimizations.
+---
+
 ## Use this skill when
 
 - Working on mobile developer tasks or workflows

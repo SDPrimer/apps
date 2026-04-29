@@ -1,3 +1,8 @@
+---
+name: jira
+description: Comprehensive management of Atlassian Jira and Confluence resources, enforcing project scope (SDP), platform prefixes, labeling standards, and issue templates.
+---
+
 # Jira & Confluence Management Ruleset
 
 This ruleset defines the standard patterns for interacting with Atlassian resources. **All operations MUST target the SDPrimer environment.**
@@ -89,3 +94,11 @@ Standard project workflow statuses to target:
 
 - **Priority:** Must have a value. Do not attempt to set to null or clear via API as it is a required system field.
 - **Description:** MUST use the templates defined in section 3. Provide a clear summary of work and explicit acceptance criteria.
+
+## 7. Link Formatting (Strict Rule)
+
+When adding comments via API (`addCommentToJiraIssue`):
+1. **MUST** set `contentFormat: "markdown"`.
+2. **MUST** use standard Markdown `[Title](URL)` syntax.
+3. If title linkification is critical, provide the raw URL in parentheses after the title.
+4. **DO NOT** use Wiki Markup `[Title|URL]` as it fails in ADF-default environments.

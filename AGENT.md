@@ -134,6 +134,7 @@ make branch-clean     # Delete local branches tracking deleted remotes
 - **[Mobile Expert](file:///.agent/skills/mobile/MOBILE.md)**: Detailed guidance for React Native and Expo development.
 - **[Jira Management](file:///.agent/skills/jira/JIRA.md)**: Conventions for Jira issue creation and management.
 - **[Pull Request Skill](file:///.agent/skills/pr/PR.md)**: Templates, rules, and **agent-led Jira automation** for PR workflows (`jira-pr-created`, `jira-pr-merged`).
+- **[Caveman Mode](file:///.agent/skills/caveman/CAVEMAN.md)**: Token-efficient communication mode.
 
 ### Core Repository Skills
 
