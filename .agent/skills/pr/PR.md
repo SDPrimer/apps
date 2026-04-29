@@ -35,6 +35,7 @@ Use this for new features or enhancements.
 - {Focus on functional changes, not just code details}
 
 Ticket: {Link to Jira ticket}
+Author: {Name}
 ```
 
 ### Fix (Bug Fix)
@@ -64,21 +65,58 @@ Use this for bug fixes or resolving issues.
 - {Focus on functional changes, not just code details}
 
 Ticket: {Link to Jira ticket}
+Author: {Name}
 ```
 
-## 3. GitHub MCP Server Integration
+## 3. Branch Naming Convention
+
+All feature and fix branches MUST follow this naming pattern (consistent with `COMMIT.md`):
+
+`{username}/{ticket-number}/{short-description}`
+
+**Example:**
+`amitraikwar/SDP-20/update-jira-skills`
+
+## 4. GitHub MCP Server Integration
 
 When creating a PR using the `github-mcp-server` tool, ensure:
 
 1. The `owner` and `repo` are set to `SDPrimer` and `apps`.
 2. The `title` strictly follows the format above.
 3. The `body` (description) strictly follows the corresponding template.
-4. The `head` branch is your feature/fix branch.
+4. The `head` branch strictly follows the naming convention: `{username}/{ticket-number}/{short-description}`.
 5. The `base` branch is `main`.
+6. Always set the PR **Assignee** to `ar1603` (Amit Raikwar).
+7. Apply platform-specific **Labels** (`Web`, `Mobile`, or `Core`) to the PR.
 
-## 4. Best Practices
+## 5. Best Practices
 
 - Always link the Jira ticket.
 - Keep titles concise but descriptive.
 - Descriptions should explain the "Why" and the functional impact of the changes.
 - Ensure the PR is created as a `draft` if it's still a work in progress.
+### skill: jira-pr-created
+**Trigger:** After creating a Pull Request.
+1. Extract the Ticket ID from the branch name using: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`.
+2. Use `addCommentToJiraIssue` to add a comment: `Pull Request raised: [{{pullRequest.title}}|{{pullRequest.url}}]`.
+3. Use `transitionJiraIssue` to move the ticket to `In Progress` (Transition ID: `21`).
+
+### skill: jira-pr-merged
+**Trigger:** After merging a Pull Request.
+1. Extract the Ticket ID from the branch name.
+2. Extract the implementation summary using: `{{pullRequest.description.match("(?s)## Implementation\s*(.*?)\r?\n\r?\nTicket:")}}`.
+3. Use `addCommentToJiraIssue` to add a comment:
+   ```text
+   The changes in this PR have been merged.
+
+   *Summary of changes:*
+   {extracted_summary}
+
+   Merged by: {{pullRequest.author.displayName}}
+   ```
+4. Use `transitionJiraIssue` to move the ticket to `Done` (Transition ID: `31`).
+
+### Smart Values Reference
+- **Summary Extraction**: `{{pullRequest.description.substringAfter("## Implementation").substringBefore("Ticket:").trim()}}`
+- **Ticket ID from Branch**: `{{pullRequest.sourceBranch.substringAfter("/").substringBefore("/")}}`
+
