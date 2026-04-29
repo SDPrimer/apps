@@ -111,7 +111,7 @@ When creating a PR using the `github-mcp-server` tool, ensure:
 1. Extract the Ticket ID from the branch name.
 2. Extract the implementation summary using: `{{pullRequest.description.match("(?s)## Implementation\s*(.*?)\r?\n\r?\nTicket:")}}`.
 3. Extract the original PR Author using: `{{pullRequest.description.substringAfter("Author:").trim()}}`.
-4. Use `addCommentToJiraIssue` to add a comment:
+4. Use `addCommentToJiraIssue` (with `contentFormat: "markdown"`) to add a comment:
    ```text
    The changes in this PR have been merged.
 
