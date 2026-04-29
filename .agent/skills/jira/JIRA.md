@@ -14,6 +14,7 @@ This ruleset defines the standard patterns for interacting with Atlassian resour
 
 ## 2. Naming Conventions
 
+- **Epic Linking:** EVERY Story, Task, and Bug MUST be linked to a corresponding Epic. When using the API, specify the Epic using the `parent: { "key": "EPIC-KEY" }` field.
 - **Platform Prefixing:** Every ticket summary MUST start with a platform identifier in brackets:
   - `[Web]` for web-related stories/tasks.
   - `[Mobile]` for mobile-related stories/tasks.
