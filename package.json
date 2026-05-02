@@ -80,7 +80,8 @@
     "react-scripts": "^5.0.1",
     "react-test-renderer": "19.0.0",
     "ts-jest": "^29.4.3",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.26.0"
   },
   "packageManager": "yarn@4.14.1",
   "repository": "git@github.com:SDPrimer/apps.git",
