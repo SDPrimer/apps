@@ -34,10 +34,8 @@
     "react-native-web": "~0.21.0",
     "react-native-worklets": "0.5.1"
   },
-  "devDependencies": {
-    "eslint-config-expo": "~10.0.0"
-  },
   "peerDependencies": {
+    "eslint-config-expo": "*",
     "expo": "*",
     "jest": "*",
     "react": "*",

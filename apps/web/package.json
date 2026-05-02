@@ -2,9 +2,6 @@
   "name": "sdprimer_web",
   "private": true,
   "main": "src/index.tsx",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "start": "craco start",
     "build": "craco build",
@@ -14,31 +11,16 @@
   "dependencies": {
     "web-vitals": "^5.1.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
-    "@babel/preset-react": "^7.27.1",
-    "@babel/preset-typescript": "^7.27.1",
-    "@craco/craco": "^7.1.0",
-    "@craco/types": "^7.1.0",
-    "@jest/globals": "^30.1.2",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/babel-core": "^6",
-    "@types/babel__core": "^7",
-    "@types/babel__preset-env": "^7",
-    "@types/react-dom": "^19.1.9",
-    "@types/react-test-renderer": "^19",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^30.1.2",
-    "jest-environment-jsdom": "^30.1.2",
-    "react-scripts": "^5.0.1",
-    "ts-jest": "^29.4.3"
-  },
   "peerDependencies": {
+    "@babel/core": "*",
+    "@craco/craco": "*",
     "@testing-library/dom": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/user-event": "*",
+    "craco": "*",
     "jest": "*",
     "react": "*",
+    "react-scripts": "*",
     "typescript": "*"
   },
   "eslintConfig": {
