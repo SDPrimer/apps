@@ -2,14 +2,16 @@
 const { defineConfig } = require("eslint/config");
 const react = require("eslint-plugin-react");
 const jest = require("eslint-plugin-jest");
+const tseslint = require("typescript-eslint");
 const globals = require("globals");
 const checkFile = require("eslint-plugin-check-file");
 const eslintPluginUnicorn = require("eslint-plugin-unicorn");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
-module.exports = defineConfig([
+module.exports = tseslint.config(
   eslintPluginUnicorn.default.configs.recommended,
   react.configs.flat["jsx-runtime"],
+  ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
   {
     settings: {
@@ -24,6 +26,10 @@ module.exports = defineConfig([
     },
     plugins: { checkFile, jest },
     languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: true,
+      },
       globals: {
         ...globals.jest,
         ...globals.browser,

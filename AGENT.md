@@ -131,7 +131,8 @@ make branch-clean     # Delete local branches tracking deleted remotes
 
 - **[Commit Workflow](file:///.agent/skills/commit/COMMIT.md)**: Guidelines for commits and branch naming.
 - **[Monorepo Architect](file:///.agent/skills/monorepo/MONOREPO.md)**: Expertise in monorepo structure and optimization.
-- **[Mobile Expert](file:///.agent/skills/mobile/MOBILE.md)**: Detailed guidance for React Native and Expo development.
+- **[Mobile Expert](file:///.agent/skills/mobile/MOBILE.md)**: Detailed guidance for Expo and React Native development.
+- **[Web Expert](file:///.agent/skills/web/WEB.md)**: Expertise in React web development and modern UI/UX.
 - **[Jira Management](file:///.agent/skills/jira/JIRA.md)**: Conventions for Jira issue creation and management.
 - **[Pull Request Skill](file:///.agent/skills/pr/PR.md)**: Templates, rules, and **agent-led Jira automation** for PR workflows (`jira-pr-created`, `jira-pr-merged`).
 - **[Caveman Mode](file:///.agent/skills/caveman/CAVEMAN.md)**: Token-efficient communication mode.
