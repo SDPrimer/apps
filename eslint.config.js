@@ -44,7 +44,7 @@ module.exports = tseslint.config(
             camelCase: true,
             pascalCase: true,
           },
-          ignore: ["^.*\.(ts|js)$", "^\\+not-found\\.tsx$"],
+          ignore: ["^.*\\.(ts|js)$", "^\\+not-found\\.tsx$"],
         },
       ],
       "checkFile/folder-match-with-fex": [
@@ -95,4 +95,4 @@ module.exports = tseslint.config(
       "**/coverage/*",
     ],
   },
-]);
+);
