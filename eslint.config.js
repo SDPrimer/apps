@@ -28,7 +28,7 @@ module.exports = tseslint.config(
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: true,
+        projectService: true,
       },
       globals: {
         ...globals.jest,
@@ -91,6 +91,7 @@ module.exports = tseslint.config(
       "**/__tests__/*",
       "**/jest_configs/**/*",
       "**/*.config.js",
+      "**/*.config.cjs",
       "**/.cz-config.js",
       "**/coverage/*",
     ],
