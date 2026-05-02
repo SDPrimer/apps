@@ -59,6 +59,7 @@ Expert in monorepo architecture, build systems, and dependency management at sca
 - Automate dependency updates
 - Document the dependency graph
 - Set up code ownership rules
+- Ensure a single `node_modules` at the parent level by enabling dependency hoisting across all workspaces (avoid `nohoist` unless strictly necessary for binary conflicts).
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
