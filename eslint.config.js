@@ -1,5 +1,4 @@
 // https://docs.expo.dev/guides/using-eslint/
-const { defineConfig } = require("eslint/config");
 const react = require("eslint-plugin-react");
 const jest = require("eslint-plugin-jest");
 const tseslint = require("typescript-eslint");
@@ -7,20 +6,33 @@ const globals = require("globals");
 const checkFile = require("eslint-plugin-check-file");
 const eslintPluginUnicorn = require("eslint-plugin-unicorn");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
+const expo = require("eslint-config-expo/flat");
 
 module.exports = tseslint.config(
   eslintPluginUnicorn.default.configs.recommended,
   react.configs.flat["jsx-runtime"],
   ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
+  ...expo.map((config) => ({
+    ...config,
+    files: ["apps/mobile/**"],
+  })),
   {
     settings: {
       "import/resolver": {
         typescript: {
-          project: ["tsconfig.json"],
+          project: [
+            "tsconfig.json",
+            "apps/*/tsconfig.json",
+            "packages/*/tsconfig.json",
+          ],
         },
         node: {
-          project: ["tsconfig.json"],
+          project: [
+            "tsconfig.json",
+            "apps/*/tsconfig.json",
+            "packages/*/tsconfig.json",
+          ],
         },
       },
     },
@@ -88,6 +100,7 @@ module.exports = tseslint.config(
       "**/dist/*",
       "**/node_modules/*",
       "**/scripts/*",
+      "**/.expo/*",
       "**/__tests__/*",
       "**/jest_configs/**/*",
       "**/*.config.js",

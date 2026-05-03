@@ -1,4 +1,4 @@
-yarn lint:staged
-yarn prettier:staged
-chmod +x scripts/run-staged-tests.sh
-yarn run-staged-tests
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+bash scripts/run-hooks.sh

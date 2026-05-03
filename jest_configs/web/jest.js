@@ -1,19 +1,19 @@
 // Jest mocks for react web.
-import '@shared/localization';
+import "@shared/localization";
 
 jest.useFakeTimers();
-jest.mock('zustand', () => require('./__mocks__/zustand'));
+jest.mock("zustand", () => require("./__mocks__/zustand"));
 
 // Font source mocks.
-jest.mock('@fontsource/bungee-shade', () => ({
+jest.mock("@fontsource/bungee-shade", () => ({
   __esModule: true,
-  default: 'bungee-shade',
+  default: "bungee-shade",
 }));
 
 /**
  * Mock helmet module
  */
-jest.mock('react-helmet-async', () => ({
+jest.mock("react-helmet-async", () => ({
   Helmet: jest.fn(({ children }) => <div>{children}</div>),
   HelmetProvider: () => jest.fn(),
 }));

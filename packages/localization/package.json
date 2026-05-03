@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -b",
-    "build:watch": "tsc -b --watch"
+    "build:watch": "tsc -b --watch",
+    "lint": "eslint ."
   },
   "dependencies": {
     "i18next": "^23.10.0",
@@ -15,5 +16,8 @@
   "peerDependencies": {
     "react": "*",
     "react-native-localize": "*"
+  },
+  "devDependencies": {
+    "eslint": "^9.27.0"
   }
 }

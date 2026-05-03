@@ -1,7 +1,7 @@
-import { act } from '@testing-library/react';
-import { create as createType, StateCreator } from 'zustand';
+import { act } from "@testing-library/react";
+import { create as createType, StateCreator } from "zustand";
 
-const zustand = jest.requireActual('zustand');
+const zustand = jest.requireActual("zustand");
 const actualCreate: typeof createType = zustand.create;
 
 // a variable to hold reset functions for all stores declared in the app
