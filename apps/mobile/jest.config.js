@@ -5,14 +5,12 @@ module.exports = {
     {
       ...baseConfig,
       displayName: "mobile-ios",
-      testEnvironment: "node",
-      snapshotResolver: "../../jest_configs/mobile/jest.snapshot.resolver.ios.js",
+      snapshotResolver: "<rootDir>/jest_configs/mobile/jest.snapshot.resolver.ios.js",
     },
     {
       ...baseConfig,
       displayName: "mobile-android",
-      testEnvironment: "node",
-      snapshotResolver: "../../jest_configs/mobile/jest.snapshot.resolver.android.js",
+      snapshotResolver: "<rootDir>/jest_configs/mobile/jest.snapshot.resolver.android.js",
     },
   ],
 };
