@@ -8,7 +8,6 @@ trigger: /commit
 
 This file provides guidance for using Claude Code to commit changes following the project's Commit Workflow.
 
-
 > [!IMPORTANT]
 > You MUST always use `make commit` to initiate a commit. This ensures all commits follow the conventional commit standard.
 
@@ -18,7 +17,7 @@ This file provides guidance for using Claude Code to commit changes following th
 2. Stage your changes: `git add <files>`
 3. Create initial commit: `make commit` (opens interactive conventional commit prompt)
 4. Amend with detailed message: `git commit --amend` to add requirements and detailed descriptions of changes
-4. Amend with detailed message: `git commit --amend` to add requirements and detailed descriptions of changes.
+5. Amend with detailed message: `git commit --amend` to add requirements and detailed descriptions of changes.
 
 ## Branch Naming
 

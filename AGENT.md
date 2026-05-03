@@ -7,20 +7,21 @@ AI coding agents should read this file before making any changes.
 
 ## Project Overview
 
-| Item | Detail |
-|---|---|
-| **Repo** | `git@github.com:SDPrimer/apps.git` |
-| **Package manager** | Yarn 4 (Berry), `nodeLinker: node-modules` |
-| **Workspaces** | `apps/web` (`sdprimer_web`), `apps/mobile` (`sdprimer_mobile`), `packages/constants` (`@shared/constants`), `packages/localization` (`@shared/localization`) |
-| **Language** | TypeScript 5.x throughout |
-| **Mobile** | Expo (SDK ~54), Expo Router, React Native 0.81 |
-| **Web** | React 19, Vite |
+| Item                | Detail                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Repo**            | `git@github.com:SDPrimer/apps.git`                                                                                                         |
+| **Package manager** | Yarn 4 (Berry), `nodeLinker: node-modules`                                                                                                 |
+| **Workspaces**      | `apps/web` (`web`), `apps/mobile` (`mobile`), `packages/constants` (`@shared/constants`), `packages/localization` (`@shared/localization`) |
+| **Language**        | TypeScript 5.x throughout                                                                                                                  |
+| **Mobile**          | Expo (SDK ~54), Expo Router, React Native 0.81                                                                                             |
+| **Web**             | React 19, Vite                                                                                                                             |
 
 ---
 
 ## Key Architectural Decisions
 
 ### Monorepo Structure
+
 - Uses Yarn 4 workspaces with `node-modules` linker.
 - Root `package.json` owns core dependencies (react, expo, typescript, jest, eslint).
 - Apps declare only app-specific dependencies.
@@ -28,6 +29,7 @@ AI coding agents should read this file before making any changes.
 - Path aliases: `@shared/*` maps to `packages/*/src`.
 
 ### Testing Strategy
+
 - Jest orchestrator at root imports mobile/web configs.
 - Mobile tests split into iOS/Android projects with platform-specific snapshots.
 - Web tests use jsdom environment.
@@ -35,12 +37,14 @@ AI coding agents should read this file before making any changes.
 - Snapshot testing for mobile components.
 
 ### TypeScript
+
 - Root `tsconfig.base.json` shared across all workspaces.
 - Each workspace extends base config and sets `"composite": true`.
 - Root `tsconfig.json` uses project references for faster builds.
 - Strict typing enforced via extended base config.
 
 ### Linting
+
 - Single root `eslint.config.js` applies to all apps and packages.
 - Uses typescript-eslint, react, jest, unicorn, prettier, and check-file plugins.
 - Enforces filename conventions and test file placement.
@@ -78,39 +82,42 @@ AI coding agents should read this file before making any changes.
 
 ### Dependency Ownership
 
-| Type | Where declared |
-|---|---|
-| `react`, `react-dom`, `react-native`, `expo`, `typescript`, `jest`, `eslint` | **Root** `package.json` `dependencies` / `devDependencies` |
-| App-specific runtime deps | App's own `dependencies` |
-| App-specific test/build tooling | App's own `devDependencies` |
-| Shared root deps used by an app | App's `peerDependencies` (e.g. `react`, `jest`, `typescript`) |
+| Type                                                                         | Where declared                                                |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `react`, `react-dom`, `react-native`, `expo`, `typescript`, `jest`, `eslint` | **Root** `package.json` `dependencies` / `devDependencies`    |
+| App-specific runtime deps                                                    | App's own `dependencies`                                      |
+| App-specific test/build tooling                                              | App's own `devDependencies`                                   |
+| Shared root deps used by an app                                              | App's `peerDependencies` (e.g. `react`, `jest`, `typescript`) |
 
 > **Never duplicate** root-owned packages as `dependencies` or `devDependencies` inside an app workspace.
 
 ### File Conventions
 
 #### Component Organization
+
 - Mobile: Uses Expo Router (file-based routing in `app/` directory).
 - Web: Standard React structure with `src/` directory.
 - Tests: `__tests__/` directory alongside source files.
 - Snapshots: `__tests__/__snapshots__/{ios|android}/` for mobile.
 
 #### Styling
+
 - Color scheme: Uses `useColorScheme` hook with light/dark mode support.
 - Constants: Centralized in `@shared/constants` package.
 - Images: Stored in `assets/images/` (mobile) and `public/` (web).
 
 #### Import Patterns
+
 ```typescript
 // Shared packages
-import { Constants } from '@shared/constants'
-import { useTranslation } from '@shared/localization'
+import { Constants } from "@shared/constants";
+import { useTranslation } from "@shared/localization";
 
 // Relative imports within same workspace
-import Component from '../components/Component'
+import Component from "../components/Component";
 
 // Assets (mobile)
-import icon from '../assets/images/icon.png'
+import icon from "../assets/images/icon.png";
 ```
 
 ---
@@ -153,14 +160,17 @@ make branch-clean      # Delete local branches tracking deleted remotes
 ## Troubleshooting
 
 ### Metro Bundler Issues (Mobile)
+
 - Clear cache: `yarn start --clear`
 - Reset project: Delete `node_modules` and reinstall.
 
 ### TypeScript Errors
+
 - Ensure shared packages are built: `yarn build:packages`.
 - Check `tsconfig.json` references are correct.
 
 ### Test Failures
+
 - Run specific project: `yarn test -- --selectProjects <project-name>`.
 - Update snapshots: `yarn test -u`.
 
@@ -182,7 +192,9 @@ make branch-clean      # Delete local branches tracking deleted remotes
 ### Core Repository Skills
 
 #### skill: add-workspace
+
 **Trigger:** Adding a new app or package workspace to the monorepo.
+
 1. Create directory under `apps/` or `packages/`.
 2. Set name to `sdprimer_<name>` (apps) or `@shared/<name>` (packages).
 3. Set `"private": true`.
@@ -192,14 +204,18 @@ make branch-clean      # Delete local branches tracking deleted remotes
 7. Update root `tsconfig.json` and `jest.config.js`.
 
 #### skill: run-tests
+
 **Trigger:** Verifying changes.
+
 - **Staged**: `bash scripts/run-staged-tests.sh`
 - **Full**: `yarn test:ci`
 - **Project**: `yarn test -- --selectProjects web-app`
 - Files: `__tests__/*.test.ts(x)`
 
 #### skill: add-test
+
 **Trigger:** Adding new tests.
+
 1. Path: `<source-dir>/__tests__/<Name>.test.tsx`.
 2. Use `@testing-library/react` (web) or `@testing-library/react-native` (mobile).
 3. Aim for ≥ 80% branch coverage.

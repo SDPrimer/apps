@@ -1,10 +1,11 @@
 # CLAUDE.md
 
-This file provides a high-level entry point for Claude-based tools working in this repository. 
+This file provides a high-level entry point for Claude-based tools working in this repository.
 
 ## Overview
 
-This is an Expo/React Native monorepo with shared TypeScript packages, using Yarn 4 workspaces. 
+This is an Expo/React Native monorepo with shared TypeScript packages, using Yarn 4 workspaces.
+
 - **Mobile app**: Expo SDK 54, React Native 0.81
 - **Web app**: React 19 via Vite
 - **Shared packages**: `@shared/constants`, `@shared/localization`

@@ -7,10 +7,12 @@ Welcome to the **SDPrimer Toolbox**, a high-performance monorepo housing the cor
 This repository uses **Yarn 4 (Berry)** workspaces to manage multiple applications and shared TypeScript packages with a focus on developer experience and agentic automation.
 
 ### 📱 Applications
+
 - **[Mobile App](file:///Users/mr.robot/z-stash/SDPrimer/toolbox/apps/mobile)**: A cross-platform mobile application built with **Expo (SDK 54)** and **React Native 0.81**.
 - **[Web App](file:///Users/mr.robot/z-stash/SDPrimer/toolbox/apps/web)**: A modern web application built with **React 19** and **Vite**.
 
 ### 📦 Shared Packages
+
 - **@shared/constants**: Centralized business logic and UI constants.
 - **@shared/localization**: Unified i18n and localization support.
 
@@ -19,11 +21,13 @@ This repository uses **Yarn 4 (Berry)** workspaces to manage multiple applicatio
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (v20+)
 - Yarn 4 (`corepack enable`)
 - Watchman (for mobile development)
 
 ### Setup
+
 ```bash
 # Clone the repository
 git clone git@github.com:SDPrimer/toolbox.git
@@ -34,6 +38,7 @@ yarn install:all
 ```
 
 ### Development
+
 ```bash
 yarn dev:web       # Start web development server
 yarn dev:ios       # Start mobile app on iOS

@@ -99,6 +99,7 @@ Standard project workflow statuses to target:
 ## 7. Link Formatting (Strict Rule)
 
 When adding comments via API (`addCommentToJiraIssue`):
+
 1. **MUST** set `contentFormat: "markdown"`.
 2. **MUST** use standard Markdown `[Title](URL)` syntax.
 3. If title linkification is critical, provide the raw URL in parentheses after the title.

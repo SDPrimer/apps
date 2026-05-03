@@ -63,6 +63,7 @@ Expert in monorepo architecture, build systems, and dependency management at sca
 - Ensure a single `node_modules` at the parent level by enabling dependency hoisting across all workspaces (avoid `nohoist` unless strictly necessary for binary conflicts).
 
 ## Limitations
+
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
