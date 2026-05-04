@@ -1,8 +1,8 @@
 {
   "references": [
-    { "path": "./apps/mobile" },
-    { "path": "./apps/web" },
     { "path": "./packages/localization" },
-    { "path": "./packages/constants" }
+    { "path": "./packages/constants" },
+    { "path": "./apps/web" },
+    { "path": "./apps/mobile" }
   ]
 }
