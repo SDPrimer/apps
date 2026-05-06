@@ -8,7 +8,7 @@ This is an Expo/React Native monorepo with shared TypeScript packages, using Yar
 
 - **Mobile app**: Expo SDK 54, React Native 0.81
 - **Web app**: React 19 via Vite
-- **Shared packages**: `@shared/constants`, `@shared/localization`
+- **Shared packages**: `@shared/constants`, `@shared/localization`, `@shared/sdpui`
 
 ## 📘 Primary Documentation
 

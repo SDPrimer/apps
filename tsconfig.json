@@ -2,6 +2,7 @@
   "references": [
     { "path": "./packages/localization" },
     { "path": "./packages/constants" },
+    { "path": "./packages/sdpui" },
     { "path": "./apps/web" },
     { "path": "./apps/mobile" }
   ]
