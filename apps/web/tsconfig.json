@@ -9,6 +9,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "jsx": "react-jsx",
+    "outDir": "dist",
     "noEmit": false,
     "emitDeclarationOnly": true,
     "composite": true,

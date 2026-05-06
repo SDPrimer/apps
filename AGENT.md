@@ -11,7 +11,7 @@ AI coding agents should read this file before making any changes.
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Repo**            | `git@github.com:SDPrimer/apps.git`                                                                                                         |
 | **Package manager** | Yarn 4 (Berry), `nodeLinker: node-modules`                                                                                                 |
-| **Workspaces**      | `apps/web` (`web`), `apps/mobile` (`mobile`), `packages/constants` (`@shared/constants`), `packages/localization` (`@shared/localization`) |
+| **Workspaces**      | `apps/web` (`web`), `apps/mobile` (`mobile`), `packages/constants` (`@shared/constants`), `packages/localization` (`@shared/localization`), `packages/sdpui` (`@shared/sdpui`) |
 | **Language**        | TypeScript 5.x throughout                                                                                                                  |
 | **Mobile**          | Expo (SDK ~54), Expo Router, React Native 0.81                                                                                             |
 | **Web**             | React 19, Vite                                                                                                                             |
@@ -61,7 +61,8 @@ AI coding agents should read this file before making any changes.
 │   └── web/             # sdprimer_web — React web app (Vite)
 ├── packages/
 │   ├── constants/       # @shared/constants
-│   └── localization/    # @shared/localization
+│   ├── localization/    # @shared/localization
+│   └── sdpui/           # @shared/sdpui (Tamagui UI Library)
 ├── jest_configs/
 │   ├── mobile/          # Shared Jest base config for mobile (iOS + Android)
 │   └── web/             # Shared Jest base config for web
@@ -134,7 +135,7 @@ yarn dev:ios       # Start Expo dev client for iOS
 yarn dev:android   # Start Expo dev client for Android
 
 # Building
-yarn build:packages    # Builds @shared/constants and @shared/localization
+yarn build:packages    # Builds @shared/constants, @shared/localization, and @shared/sdpui
 yarn build:web         # Production web build
 yarn build:ios         # iOS app build (requires Xcode)
 yarn build:android     # Android app build (requires Android Studio)

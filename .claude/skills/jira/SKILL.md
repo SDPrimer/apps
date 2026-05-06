@@ -24,6 +24,7 @@ This ruleset defines the standard patterns for interacting with Atlassian resour
 - **Platform Prefixing:** Every ticket summary MUST start with a platform identifier in brackets:
   - `[Web]` for web-related stories/tasks.
   - `[Mobile]` for mobile-related stories/tasks.
+  - `[Packages]` for shared package development.
   - `[Core]` for shared or infrastructure-related tasks.
 - **Example:** `[Web] Implement login form validation`
 
@@ -79,9 +80,9 @@ Use for high-level project goals or features.
 ## 4. Labeling
 
 > [!IMPORTANT]
-> **Every ticket MUST have at least one platform-specific label (`Web`, `Mobile`, or `Core`).**
+> **Every ticket MUST have at least one platform-specific label (`Web`, `Mobile`, `Packages`, or `Core`).**
 
-- Apply platform-specific labels (`Web`, `Mobile`, `Core`) to every issue for easy filtering.
+- Apply platform-specific labels (`Web`, `Mobile`, `Packages`, `Core`) to every issue for easy filtering.
 - Link all stories and tasks to their corresponding **Epic**.
 
 ## 5. Workflow & Statuses

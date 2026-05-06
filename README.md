@@ -15,6 +15,7 @@ This repository uses **Yarn 4 (Berry)** workspaces to manage multiple applicatio
 
 - **@shared/constants**: Centralized business logic and UI constants.
 - **@shared/localization**: Unified i18n and localization support.
+- **@shared/sdpui**: Shared UI component library built with Tamagui.
 
 ---
 

@@ -3,9 +3,12 @@
   "compilerOptions": {
     "strict": true,
     "composite": true,
+    "outDir": "dist",
     "declaration": true,
+    "declarationMap": true,
     "noEmit": false,
     "emitDeclarationOnly": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./*"]
     }
@@ -16,5 +19,7 @@
     "index.js",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "node_modules"]
 }
