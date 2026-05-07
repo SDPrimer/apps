@@ -1,3 +1,4 @@
+
 import { Text as TamaguiText } from "tamagui";
 import type { TextProps } from "./types";
 import { textVariants } from "./consts";
@@ -20,3 +21,5 @@ export const Text = ({
     </TamaguiText>
   );
 };
+
+export default Text;

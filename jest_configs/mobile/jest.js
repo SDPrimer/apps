@@ -1,8 +1,11 @@
-// Mock for mobile.
-jest.mock("react-native-worklets", () => ({
-  useWorklet: (fn) => fn,
-  useFlow: () => ({ current: null }),
-  Worklets: {
-    createContext: () => ({}),
+jest.mock("react-native", () => ({
+  View: "View",
+  Text: "Text",
+  TouchableOpacity: "TouchableOpacity",
+  StyleSheet: {
+    create: (s) => s,
+    flatten: (s) => s,
   },
+  Platform: { OS: "ios", select: (obj) => obj.ios || obj },
+  useColorScheme: () => "light",
 }));

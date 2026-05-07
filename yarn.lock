@@ -4618,6 +4618,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@shared/sdpui@workspace:packages/sdpui"
   dependencies:
+    "@testing-library/react-native": "npm:^13.3.3"
     "@types/react": "npm:^19.1.0"
     "@types/react-native": "npm:^0.73.0"
     eslint: "npm:^9.27.0"
@@ -6184,6 +6185,26 @@ __metadata:
     picocolors: "npm:^1.1.1"
     redent: "npm:^3.0.0"
   checksum: 10c0/4291ebd2f0f38d14cefac142c56c337941775a5807e2a3d6f1a14c2fbd6be76a18e498ed189e95bedc97d9e8cf1738049bc76c85b5bc5e23fae7c9e10f7b3a12
+  languageName: node
+  linkType: hard
+
+"@testing-library/react-native@npm:^13.3.3":
+  version: 13.3.3
+  resolution: "@testing-library/react-native@npm:13.3.3"
+  dependencies:
+    jest-matcher-utils: "npm:^30.0.5"
+    picocolors: "npm:^1.1.1"
+    pretty-format: "npm:^30.0.5"
+    redent: "npm:^3.0.0"
+  peerDependencies:
+    jest: ">=29.0.0"
+    react: ">=18.2.0"
+    react-native: ">=0.71"
+    react-test-renderer: ">=18.2.0"
+  peerDependenciesMeta:
+    jest:
+      optional: true
+  checksum: 10c0/ba13066536d5b2c0b625220d4320c6ad1e390c3df4f4b614d859ef467c4974ad52aa79269ae98efdba8f5a074644e3d11583a5485312df5a64387976ecf4225a
   languageName: node
   linkType: hard
 
@@ -14652,7 +14673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-matcher-utils@npm:30.3.0":
+"jest-matcher-utils@npm:30.3.0, jest-matcher-utils@npm:^30.0.5":
   version: 30.3.0
   resolution: "jest-matcher-utils@npm:30.3.0"
   dependencies:
@@ -17102,6 +17123,7 @@ __metadata:
     "@babel/core": "npm:^7.29.0"
     "@expo/vector-icons": "npm:^15.0.3"
     "@react-navigation/native": "npm:^7.1.8"
+    "@testing-library/react-native": "npm:^13.3.3"
     "@types/babel__core": "npm:^7"
     "@types/react": "npm:~19.1.10"
     eslint: "npm:^9.27.0"
@@ -18875,7 +18897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.3.0, pretty-format@npm:^30.0.0":
+"pretty-format@npm:30.3.0, pretty-format@npm:^30.0.0, pretty-format@npm:^30.0.5":
   version: 30.3.0
   resolution: "pretty-format@npm:30.3.0"
   dependencies:
@@ -20390,6 +20412,7 @@ __metadata:
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.8.0"
     "@testing-library/react": "npm:^16.3.0"
+    "@testing-library/react-native": "npm:^13.3.3"
     "@testing-library/user-event": "npm:^14.6.1"
     "@types/babel-core": "npm:^6"
     "@types/babel__core": "npm:^7"
