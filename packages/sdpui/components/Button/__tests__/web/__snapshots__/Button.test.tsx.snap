@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Button matches snapshot 1`] = `
+<div
+  data-testid="theme-light"
+>
+  <div
+    data-testid="tamagui-provider"
+  >
+    <button>
+      Primary
+    </button>
+  </div>
+</div>
+`;

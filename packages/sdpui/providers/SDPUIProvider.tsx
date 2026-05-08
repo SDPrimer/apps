@@ -9,7 +9,7 @@ export type SDPUIProviderProps = {
   theme?: keyof typeof themes;
 };
 
-export const SDPUIProvider = ({ children, theme }: SDPUIProviderProps) => {
+const SdpuiProvider = ({ children, theme }: SDPUIProviderProps) => {
   // Detect system theme on native platforms
   const systemTheme = useColorScheme();
   const effectiveTheme = useMemo(() => {
@@ -29,3 +29,5 @@ export const SDPUIProvider = ({ children, theme }: SDPUIProviderProps) => {
     </Theme>
   );
 };
+
+export default SdpuiProvider;

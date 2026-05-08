@@ -123,6 +123,17 @@ import icon from "../assets/images/icon.png";
 
 ---
 
+## Agent Workflow
+
+After completing edits, always verify:
+1. **Lint**: `npx eslint <changed-files>` — fix all errors
+2. **Format**: `npx prettier --check <changed-files>` — run `npx prettier --write <changed-files>` to fix
+3. **Tests**: `yarn test --no-coverage` — ensure all tests pass
+
+Never commit until lint + format + tests are clean.
+
+---
+
 ## Common Commands
 
 ```bash
